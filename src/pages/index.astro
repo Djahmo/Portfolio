@@ -1,11 +1,210 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import SkillCard from '../components/SkillCard.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Projets de Clayton Girard
+const projects = [
+  {
+    title: "TerritoryGenerator",
+    description: "Site web pour générer automatiquement des territoires à partir de fichiers CSV NWPublisher ou GPX. Outil pratique pour l'organisation territoriale.",
+    technologies: ["TypeScript", "Web APIs", "CSV Processing", "GPX Parsing"],
+    githubUrl: "https://github.com/Djahmo/TerritoryGenerator",
+    featured: true
+  },
+  {
+    title: "BakedDelight",
+    description: "Addon pour Farmer's Delight dans Minecraft, ajoutant de nouvelles recettes et fonctionnalités culinaires au mod populaire.",
+    technologies: ["Java", "Minecraft Forge", "Mod Development"],
+    githubUrl: "https://github.com/Djahmo/BakedDelight"
+  },
+  {
+    title: "Chessmont",
+    description: "Plateforme d'entraînement aux échecs complète pour joueurs de tous niveaux. Centralise les parties Chess.com/Lichess, analyse les progrès, objectifs personnalisés, clubs et coaching.",
+    technologies: ["React", "Vite", "UnoCSS", "Fastify", "MySQL", "Drizzle ORM", "Tauri v2", "TypeScript"],
+    githubUrl: "https://github.com/Djahmo/Chessmont",
+    featured: true
+  },
+  {
+    title: "FAMIc",
+    description: "Projet Python démontrant des compétences en développement backend et traitement de données.",
+    technologies: ["Python", "Data Processing"],
+    githubUrl: "https://github.com/Djahmo/FAMIc"
+  }
+];
+
+const skills = [
+  { name: "TypeScript", level: 5, icon: "i-carbon-document-config", category: "Language" },
+  { name: "React", level: 5, icon: "i-carbon-logo-react", category: "Frontend" },
+  { name: "Vite", level: 4, icon: "i-carbon-flash", category: "Build Tool" },
+  { name: "UnoCSS", level: 4, icon: "i-carbon-paint-brush", category: "CSS Framework" },
+  { name: "Fastify", level: 4, icon: "i-carbon-rocket", category: "Backend" },
+  { name: "MySQL", level: 4, icon: "i-carbon-data-base", category: "Database" },
+  { name: "Tauri", level: 4, icon: "i-carbon-application", category: "Desktop/Mobile" },
+  { name: "Java", level: 3, icon: "i-carbon-application", category: "Language" },
+  { name: "Python", level: 4, icon: "i-carbon-logo-python", category: "Language" },
+];
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Clayton Girard - Développeur">
+  <Header />
+  
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary-50 to-secondary-50 py-20">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-5xl md:text-6xl font-bold text-secondary-900 mb-6">
+            Clayton
+            <span class="bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">
+              Girard
+            </span>
+          </h1>
+          <p class="text-xl text-secondary-600 mb-8 leading-relaxed">
+            Développeur full-stack passionné par la création d'applications modernes et performantes. 
+            Spécialisé dans React, TypeScript, et les architectures monorepo avec des outils comme Tauri.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#projects" class="btn-primary inline-flex items-center">
+              <span>Voir mes projets</span>
+              <div class="i-carbon-arrow-down ml-2 w-4 h-4"></div>
+            </a>
+            <a href="#contact" class="btn-secondary inline-flex items-center">
+              <span>Me contacter</span>
+              <div class="i-carbon-email ml-2 w-4 h-4"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">À propos</h2>
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <p class="text-lg text-secondary-600 leading-relaxed mb-6">
+                Développeur full-stack avec une expertise en React, TypeScript et architectures modernes. 
+                Je me spécialise dans le développement d'applications cross-platform avec Tauri, 
+                les APIs performantes avec Fastify, et les interfaces utilisateur avec React + UnoCSS.
+              </p>
+              <p class="text-lg text-secondary-600 leading-relaxed">
+                Mon approche combine les meilleures pratiques du développement moderne avec 
+                des outils de pointe comme Turborepo pour les monorepos, Drizzle ORM pour les bases de données, 
+                et des tests complets avec Vitest et Playwright.
+              </p>
+            </div>
+            <div class="grid grid-cols-2 gap-6">
+              <div class="text-center">
+                <div class="text-3xl font-bold text-primary-600">4+</div>
+                <div class="text-secondary-600">Projets GitHub</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-primary-600">3+</div>
+                <div class="text-secondary-600">Langages maîtrisés</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-primary-600">100%</div>
+                <div class="text-secondary-600">Open Source</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-primary-600">∞</div>
+                <div class="text-secondary-600">Passion</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-secondary-50">
+      <div class="container-custom">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">Compétences</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {skills.map((skill) => (
+              <SkillCard {...skill} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+      <div class="container-custom">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">Projets récents</h2>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {projects.map((project) => (
+              <ProjectCard {...project} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-secondary-50">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-6">Restons en contact</h2>
+          <p class="text-lg text-secondary-600 mb-12">
+            Intéressé par une collaboration ? N'hésitez pas à me contacter 
+            pour discuter de votre projet.
+          </p>
+          
+          <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <div class="flex flex-col items-center">
+              <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mb-4">
+                <div class="i-carbon-email w-6 h-6 text-primary-600"></div>
+              </div>
+              <h3 class="font-semibold mb-2">Email</h3>
+              <a href="mailto:contact@djahmo.fr" class="text-primary-600 hover:text-primary-700">
+                contact@djahmo.fr
+              </a>
+            </div>
+            
+            <div class="flex flex-col items-center">
+              <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mb-4">
+                <div class="i-carbon-logo-linkedin w-6 h-6 text-primary-600"></div>
+              </div>
+              <h3 class="font-semibold mb-2">LinkedIn</h3>
+              <a href="https://www.linkedin.com/in/clayton-girard-89b4b1158" target="_blank" class="text-primary-600 hover:text-primary-700">
+                /in/clayton-girard
+              </a>
+            </div>
+            
+            <div class="flex flex-col items-center">
+              <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mb-4">
+                <div class="i-carbon-logo-github w-6 h-6 text-primary-600"></div>
+              </div>
+              <h3 class="font-semibold mb-2">GitHub</h3>
+              <a href="https://github.com/Djahmo" target="_blank" class="text-primary-600 hover:text-primary-700">
+                @Djahmo
+              </a>
+            </div>
+          </div>
+          
+          <a href="mailto:contact@djahmo.fr" class="btn-primary inline-flex items-center">
+            <span>Envoyer un message</span>
+            <div class="i-carbon-send ml-2 w-4 h-4"></div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-secondary-900 text-secondary-300 py-8">
+    <div class="container-custom">
+      <div class="text-center">
+        <p>&copy; 2025 Clayton Girard. Développé avec Astro et UnoCSS.</p>
+      </div>
+    </div>
+  </footer>
 </Layout>

@@ -1,0 +1,36 @@
+---
+export interface Props {
+  name: string;
+  level: number; // 1-5
+  icon?: string;
+  category?: string;
+}
+
+const { name, level, icon, category } = Astro.props;
+
+// Generate stars for skill level
+const stars = Array.from({ length: 5 }, (_, i) => i < level);
+---
+
+<div class="bg-white rounded-lg p-4 shadow-sm border border-secondary-200 hover:shadow-md transition-shadow">
+  <div class="flex items-center justify-between mb-3">
+    <div class="flex items-center space-x-3">
+      {icon && (
+        <div class={`${icon} w-6 h-6 text-primary-600`}></div>
+      )}
+      <div>
+        <h3 class="font-semibold text-secondary-900">{name}</h3>
+        {category && (
+          <span class="text-xs text-secondary-500">{category}</span>
+        )}
+      </div>
+    </div>
+  </div>
+  
+  <div class="flex items-center space-x-1">
+    {stars.map((filled) => (
+      <div class={`w-3 h-3 rounded-full ${filled ? 'bg-primary-500' : 'bg-secondary-200'}`}></div>
+    ))}
+    <span class="ml-2 text-sm text-secondary-600">{level}/5</span>
+  </div>
+</div>
