@@ -7,28 +7,42 @@ import SkillCard from '../components/SkillCard.astro';
 // Projets de Clayton Girard
 const projects = [
   {
+    title: "Chessmont",
+    description: "Plateforme d'entraînement aux échecs complète pour joueurs de tous niveaux. Centralise les parties Chess.com/Lichess, analyse les progrès, objectifs personnalisés, clubs et coaching.",
+    technologies: ["React", "Vite", "UnoCSS", "Fastify", "MySQL", "Drizzle ORM", "Tauri v2", "TypeScript"],
+    githubUrl: "https://github.com/Djahmo/Chessmont",
+    liveUrl: "https://chessmont.com",
+    featured: true
+  },
+  {
     title: "TerritoryGenerator",
     description: "Site web pour générer automatiquement des territoires à partir de fichiers CSV NWPublisher ou GPX. Outil pratique pour l'organisation territoriale.",
     technologies: ["TypeScript", "Web APIs", "CSV Processing", "GPX Parsing"],
     githubUrl: "https://github.com/Djahmo/TerritoryGenerator",
-    featured: true
+    liveUrl: "https://territory.djahmo.fr"
+  },
+  {
+    title: "WatchAnime",
+    description: "Plateforme de streaming d'animés full-stack avec système de notation, favoris, historique et synchronisation temps réel. Interface moderne React + backend Node.js/Express + MariaDB.",
+    technologies: ["React", "Node.js", "Express", "MariaDB", "Sequelize", "WebSocket", "JWT", "TailwindCSS", "Puppeteer"],
+    isPrivate: true
   },
   {
     title: "BakedDelight",
     description: "Addon pour Farmer's Delight dans Minecraft, ajoutant de nouvelles recettes et fonctionnalités culinaires au mod populaire.",
     technologies: ["Java", "Minecraft Forge", "Mod Development"],
-    githubUrl: "https://github.com/Djahmo/BakedDelight"
+    githubUrl: "https://github.com/Djahmo/BakedDelight",
+    liveUrl: "https://www.curseforge.com/minecraft/mc-mods/baked-delight"
   },
   {
-    title: "Chessmont",
-    description: "Plateforme d'entraînement aux échecs complète pour joueurs de tous niveaux. Centralise les parties Chess.com/Lichess, analyse les progrès, objectifs personnalisés, clubs et coaching.",
-    technologies: ["React", "Vite", "UnoCSS", "Fastify", "MySQL", "Drizzle ORM", "Tauri v2", "TypeScript"],
-    githubUrl: "https://github.com/Djahmo/Chessmont",
-    featured: true
+    title: "Portfolio",
+    description: "Portfolio personnel moderne et responsive construit avec Astro et UnoCSS. Design minimaliste, performance optimisée et génération statique pour un référencement parfait.",
+    technologies: ["Astro", "TypeScript", "UnoCSS", "Static Site Generation"],
+    githubUrl: "https://github.com/Djahmo/Portfolio"
   },
   {
     title: "FAMIc",
-    description: "Projet Python démontrant des compétences en développement backend et traitement de données.",
+    description: "Petit utilitaire python de triche pour le jeu Farmer Against Potatoes Idle qui permet d'automatiser le jeu du Whack.",
     technologies: ["Python", "Data Processing"],
     githubUrl: "https://github.com/Djahmo/FAMIc"
   }
@@ -37,17 +51,25 @@ const projects = [
 const skills = [
   { name: "TypeScript", level: 5, icon: "i-carbon-document-config", category: "Language" },
   { name: "React", level: 5, icon: "i-carbon-logo-react", category: "Frontend" },
+  { name: "Astro", level: 4, icon: "i-carbon-rocket", category: "Frontend" },
+  { name: "Node.js", level: 5, icon: "i-carbon-logo-nodejs", category: "Backend" },
+  { name: "Express", level: 5, icon: "i-carbon-api-1", category: "Backend" },
+  { name: "MySQL/MariaDB", level: 5, icon: "i-carbon-data-base", category: "Database" },
+  { name: "Sequelize", level: 4, icon: "i-carbon-data-base-alt", category: "ORM" },
+  { name: "WebSocket", level: 4, icon: "i-carbon-connect", category: "Real-time" },
+  { name: "JWT", level: 4, icon: "i-carbon-security", category: "Auth" },
   { name: "Vite", level: 4, icon: "i-carbon-flash", category: "Build Tool" },
   { name: "UnoCSS", level: 4, icon: "i-carbon-paint-brush", category: "CSS Framework" },
+  { name: "TailwindCSS", level: 4, icon: "i-carbon-paint-brush", category: "CSS Framework" },
   { name: "Fastify", level: 4, icon: "i-carbon-rocket", category: "Backend" },
-  { name: "MySQL", level: 4, icon: "i-carbon-data-base", category: "Database" },
+  { name: "Drizzle ORM", level: 4, icon: "i-carbon-data-base-alt", category: "ORM" },
   { name: "Tauri", level: 4, icon: "i-carbon-application", category: "Desktop/Mobile" },
   { name: "Java", level: 3, icon: "i-carbon-application", category: "Language" },
   { name: "Python", level: 4, icon: "i-carbon-logo-python", category: "Language" },
 ];
 ---
 
-<Layout title="Clayton Girard - Développeur">
+<Layout title="Clayton Girard - Ingénieur logiciels">
   <Header />
   
   <main class="pt-20">
@@ -62,7 +84,7 @@ const skills = [
             </span>
           </h1>
           <p class="text-xl text-secondary-600 mb-8 leading-relaxed">
-            Développeur full-stack passionné par la création d'applications modernes et performantes. 
+            Ingénieur logiciels chez Institut FEMTO-ST, passionné par la création d'applications modernes et performantes. 
             Spécialisé dans React, TypeScript, et les architectures monorepo avec des outils comme Tauri.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -87,7 +109,7 @@ const skills = [
           <div class="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <p class="text-lg text-secondary-600 leading-relaxed mb-6">
-                Développeur full-stack avec une expertise en React, TypeScript et architectures modernes. 
+                Ingénieur logiciels chez Institut FEMTO-ST avec une expertise en React, TypeScript et architectures modernes. 
                 Je me spécialise dans le développement d'applications cross-platform avec Tauri, 
                 les APIs performantes avec Fastify, et les interfaces utilisateur avec React + UnoCSS.
               </p>

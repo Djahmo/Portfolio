@@ -7,6 +7,7 @@ export interface Props {
   githubUrl?: string;
   liveUrl?: string;
   featured?: boolean;
+  isPrivate?: boolean;
 }
 
 const { 
@@ -16,7 +17,8 @@ const {
   image, 
   githubUrl, 
   liveUrl,
-  featured = false 
+  featured = false,
+  isPrivate = false
 } = Astro.props;
 ---
 
@@ -32,19 +34,26 @@ const {
     </div>
   )}
   
-  <div class="flex-1">
-    <div class="flex items-start justify-between mb-3">
-      <h3 class="text-xl font-semibold text-secondary-900">
+  <div class="flex-1">    <div class="flex items-start justify-between mb-3">
+      <h3 class="text-xl font-semibold text-secondary-900 flex items-center flex-wrap gap-2">
         {title}
-        {featured && (
-          <span class="ml-2 text-xs bg-primary-100 text-primary-800 px-2 py-1 rounded-full">
-            Featured
-          </span>
-        )}
+        <div class="flex gap-2">
+          {featured && (
+            <span class="text-xs bg-primary-100 text-primary-800 px-2 py-1 rounded-full">
+              Featured
+            </span>
+          )}
+          {isPrivate && (
+            <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded-full flex items-center gap-1">
+              <div class="i-carbon-locked w-3 h-3"></div>
+              Privé
+            </span>
+          )}
+        </div>
       </h3>
       
       <div class="flex space-x-2 ml-4">
-        {githubUrl && (
+        {!isPrivate && githubUrl && (
           <a 
             href={githubUrl}
             target="_blank"
@@ -54,6 +63,11 @@ const {
           >
             <div class="i-carbon-logo-github w-5 h-5"></div>
           </a>
+        )}
+        {isPrivate && (
+          <div class="p-2 text-secondary-400 cursor-not-allowed" aria-label="Dépôt privé">
+            <div class="i-carbon-logo-github w-5 h-5"></div>
+          </div>
         )}
         {liveUrl && (
           <a 
