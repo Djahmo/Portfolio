@@ -103,23 +103,40 @@ const skills = [
       </div>
 
       <div class="container-custom relative z-10">
-        <div class="max-w-4xl mx-auto text-center">
-          <h1 class="text-5xl md:text-6xl font-bold text-secondary-900 mb-6">
-            Clayton Girard
-          </h1>
-          <p class="text-xl text-secondary-600 mb-8 leading-relaxed">
-            Ingénieur logiciels chez Institut FEMTO-ST, passionné par la création d'applications modernes et performantes.
-            Spécialisé dans React, TypeScript, et les architectures monorepo avec des outils comme Tauri.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#projects" class="btn-primary inline-flex items-center">
-              <span>Voir mes projets</span>
-              <div class="i-carbon-arrow-down ml-2 w-4 h-4"></div>
-            </a>
-            <a href="#contact" class="btn-secondary inline-flex items-center">
-              <span>Me contacter</span>
-              <div class="i-carbon-email ml-2 w-4 h-4"></div>
-            </a>
+        <div class="max-w-6xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <!-- Photo de profil -->
+            <div class="flex justify-center md:justify-start order-2 md:order-1">
+              <div class="relative">
+                <img 
+                  src="/photo.jpg" 
+                  alt="Clayton Girard"
+                  class="w-80 h-80 object-cover rounded-full shadow-2xl border-4 border-white"
+                />
+                <div class="absolute inset-0 rounded-full bg-gradient-to-br from-primary-200/20 to-secondary-200/20"></div>
+              </div>
+            </div>
+            
+            <!-- Texte principal -->
+            <div class="text-center md:text-left order-1 md:order-2">
+              <h1 class="text-5xl md:text-6xl font-bold text-secondary-900 mb-6">
+                Clayton Girard
+              </h1>
+              <p class="text-xl text-secondary-600 mb-8 leading-relaxed">
+                Ingénieur logiciels chez Institut FEMTO-ST, passionné par la création d'applications modernes et performantes.
+                Spécialisé dans React, TypeScript, et les architectures monorepo avec des outils comme Tauri.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <a href="#projects" class="btn-primary inline-flex items-center">
+                  <span>Voir mes projets</span>
+                  <div class="i-carbon-arrow-down ml-2 w-4 h-4"></div>
+                </a>
+                <a href="#contact" class="btn-secondary inline-flex items-center">
+                  <span>Me contacter</span>
+                  <div class="i-carbon-email ml-2 w-4 h-4"></div>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -171,10 +188,75 @@ const skills = [
       <div class="container-custom">
         <div class="max-w-6xl mx-auto">
           <h2 class="text-3xl font-bold text-center mb-12">Compétences</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {skills.map((skill) => (
-              <SkillCard {...skill} />
-            ))}
+          
+          <!-- Langages de programmation -->
+          <div class="mb-12">
+            <h3 class="text-2xl font-semibold text-center mb-8 text-secondary-800">Langages de programmation</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {skills.filter(skill => skill.category === "Language").map((skill) => (
+                <SkillCard {...skill} />
+              ))}
+            </div>
+          </div>
+
+          <!-- Frontend & Backend -->
+          <div class="grid md:grid-cols-2 gap-12 mb-12">
+            <div>
+              <h3 class="text-2xl font-semibold text-center mb-8 text-secondary-800">Frontend</h3>
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {skills.filter(skill => skill.category === "Frontend").map((skill) => (
+                  <SkillCard {...skill} />
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 class="text-2xl font-semibold text-center mb-8 text-secondary-800">Backend</h3>
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {skills.filter(skill => skill.category === "Backend").map((skill) => (
+                  <SkillCard {...skill} />
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <!-- Base de données & ORM -->
+          <div class="mb-12">
+            <h3 class="text-2xl font-semibold text-center mb-8 text-secondary-800">Base de données & ORM</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {skills.filter(skill => skill.category === "Database" || skill.category === "ORM").map((skill) => (
+                <SkillCard {...skill} />
+              ))}
+            </div>
+          </div>
+
+          <!-- Outils & Frameworks -->
+          <div class="grid md:grid-cols-2 gap-12">
+            <div>
+              <h3 class="text-2xl font-semibold text-center mb-8 text-secondary-800">Outils & Build</h3>
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {skills.filter(skill => 
+                  skill.category === "Build Tool" || 
+                  skill.category === "CSS Framework" || 
+                  skill.category === "Desktop/Mobile" ||
+                  skill.category === "Web" ||
+                  skill.category === "Scripting"
+                ).map((skill) => (
+                  <SkillCard {...skill} />
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 class="text-2xl font-semibold text-center mb-8 text-secondary-800">Spécialisations</h3>
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {skills.filter(skill => 
+                  skill.category === "Real-time" || 
+                  skill.category === "Auth" || 
+                  skill.category === "Data Science"
+                ).map((skill) => (
+                  <SkillCard {...skill} />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
