@@ -50,6 +50,18 @@ const projects = [
     githubUrl: "https://github.com/Djahmo/Portfolio"
   },
   {
+    title: "Bot Régie",
+    description: "Bot Discord de modération avancé avec plus de 100 commandes pour gérer entièrement un serveur. Système de permissions sophistiqué, base de données MySQL pour persistance et commandes utilitaires complètes.",
+    technologies: ["JavaScript", "Discord.js", "MySQL", "Bot Development", "Moderation"],
+    isPrivate: true
+  },
+  {
+    title: "Bot Casino",
+    description: "Bot Discord de mini-jeux avec casino complet (blackjack, roulette, machines à sous), jeux de réflexion (pendu, définitions), système de cartes à collectionner et multiples divertissements interactifs.",
+    technologies: ["JavaScript", "Discord.js", "Game Development", "Interactive Commands"],
+    isPrivate: true
+  },
+  {
     title: "FAMIc",
     description: "Petit utilitaire python de triche pour le jeu Farmer Against Potatoes Idle qui permet d'automatiser le jeu du Whack.",
     technologies: ["Python", "Data Processing"],
@@ -83,6 +95,7 @@ const skills = [
   { name: "Tauri", level: 4, icon: "i-carbon-application", category: "Desktop/Mobile" },
   { name: "Data Processing", level: 4, icon: "i-carbon-data-table", category: "Data Science" },
   { name: "Open Data", level: 4, icon: "i-carbon-data-share", category: "Data Science" },
+  { name: "Discord.js", level: 4, icon: "i-carbon-bot", category: "Bot Development" },
 ];
 ---
 
@@ -251,7 +264,8 @@ const skills = [
                 {skills.filter(skill =>
                   skill.category === "Real-time" ||
                   skill.category === "Auth" ||
-                  skill.category === "Data Science"
+                  skill.category === "Data Science" ||
+                  skill.category === "Bot Development"
                 ).map((skill) => (
                   <SkillCard {...skill} />
                 ))}
