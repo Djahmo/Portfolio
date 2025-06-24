@@ -10,12 +10,12 @@ export interface Props {
   isPrivate?: boolean;
 }
 
-const { 
-  title, 
-  description, 
-  technologies, 
-  image, 
-  githubUrl, 
+const {
+  title,
+  description,
+  technologies,
+  image,
+  githubUrl,
   liveUrl,
   featured = false,
   isPrivate = false
@@ -25,15 +25,15 @@ const {
 <div class={`card transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${featured ? 'ring-2 ring-primary-200' : ''}`}>
   {image && (
     <div class="mb-4 rounded-lg overflow-hidden">
-      <img 
-        src={image} 
+      <img
+        src={image}
         alt={title}
         class="w-full h-48 object-cover"
         loading="lazy"
       />
     </div>
   )}
-  
+
   <div class="flex-1">    <div class="flex items-start justify-between mb-3">
       <h3 class="text-xl font-semibold text-secondary-900 flex items-center flex-wrap gap-2">
         {title}
@@ -51,10 +51,10 @@ const {
           )}
         </div>
       </h3>
-      
+
       <div class="flex space-x-2 ml-4">
         {!isPrivate && githubUrl && (
-          <a 
+          <a
             href={githubUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -70,7 +70,7 @@ const {
           </div>
         )}
         {liveUrl && (
-          <a 
+          <a
             href={liveUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -82,11 +82,11 @@ const {
         )}
       </div>
     </div>
-    
+
     <p class="text-secondary-600 mb-4 leading-relaxed">
       {description}
     </p>
-    
+
     <div class="flex flex-wrap gap-2">
       {technologies.map((tech) => (
         <span class="px-3 py-1 bg-secondary-100 text-secondary-700 text-sm rounded-full font-medium">
