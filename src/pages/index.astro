@@ -12,6 +12,15 @@ const projects = [
     technologies: ["React", "Vite", "UnoCSS", "Fastify", "MySQL", "Drizzle ORM", "Tauri v2", "TypeScript"],
     githubUrl: "https://github.com/Djahmo/Chessmont",
     liveUrl: "https://chessmont.com",
+    featured: true,
+    isPrivate: true
+  },
+  {
+    title: "Chessmont Open Database",
+    description: "Dataset massif d'échecs open source avec 21.5+ millions de parties uniques et 1.8+ milliards de positions indexées. Fusion de données Lichess, Chess.com, TWIC et PGN Mentor disponible sur Kaggle.",
+    technologies: ["Javascript", "Data Processing", "Zstandard", "PGN", "Open Data", "Kaggle"],
+    githubUrl: "https://github.com/Chessmont/ChessDatasetGenerator",
+    liveUrl: "https://database.chessmont.com",
     featured: true
   },
   {
@@ -50,41 +59,56 @@ const projects = [
 
 const skills = [
   { name: "TypeScript", level: 5, icon: "i-carbon-document-config", category: "Language" },
+  { name: "JavaScript", level: 5, icon: "i-carbon-logo-javascript", category: "Language" },
+  { name: "Java", level: 4, icon: "i-carbon-application", category: "Language" },
+  { name: "Python", level: 4, icon: "i-carbon-logo-python", category: "Language" },
+  { name: "C++", level: 3, icon: "i-carbon-code", category: "Language" },
+  { name: "C#", level: 3, icon: "i-carbon-application", category: "Language" },
+  { name: "PHP", level: 3, icon: "i-carbon-logo-php", category: "Language" },
+  { name: "HTML/CSS", level: 5, icon: "i-carbon-html", category: "Web" },
+  { name: "Bash/Batch", level: 4, icon: "i-carbon-terminal", category: "Scripting" },
   { name: "React", level: 5, icon: "i-carbon-logo-react", category: "Frontend" },
   { name: "Astro", level: 4, icon: "i-carbon-rocket", category: "Frontend" },
   { name: "Node.js", level: 5, icon: "i-carbon-logo-nodejs", category: "Backend" },
   { name: "Express", level: 5, icon: "i-carbon-api-1", category: "Backend" },
+  { name: "Fastify", level: 4, icon: "i-carbon-rocket", category: "Backend" },
   { name: "MySQL/MariaDB", level: 5, icon: "i-carbon-data-base", category: "Database" },
   { name: "Sequelize", level: 4, icon: "i-carbon-data-base-alt", category: "ORM" },
+  { name: "Drizzle ORM", level: 4, icon: "i-carbon-data-base-alt", category: "ORM" },
   { name: "WebSocket", level: 4, icon: "i-carbon-connect", category: "Real-time" },
   { name: "JWT", level: 4, icon: "i-carbon-security", category: "Auth" },
   { name: "Vite", level: 4, icon: "i-carbon-flash", category: "Build Tool" },
   { name: "UnoCSS", level: 4, icon: "i-carbon-paint-brush", category: "CSS Framework" },
   { name: "TailwindCSS", level: 4, icon: "i-carbon-paint-brush", category: "CSS Framework" },
-  { name: "Fastify", level: 4, icon: "i-carbon-rocket", category: "Backend" },
-  { name: "Drizzle ORM", level: 4, icon: "i-carbon-data-base-alt", category: "ORM" },
   { name: "Tauri", level: 4, icon: "i-carbon-application", category: "Desktop/Mobile" },
-  { name: "Java", level: 3, icon: "i-carbon-application", category: "Language" },
-  { name: "Python", level: 4, icon: "i-carbon-logo-python", category: "Language" },
+  { name: "Data Processing", level: 4, icon: "i-carbon-data-table", category: "Data Science" },
+  { name: "Open Data", level: 4, icon: "i-carbon-data-share", category: "Data Science" },
 ];
 ---
 
 <Layout title="Clayton Girard - Ingénieur logiciels">
   <Header />
-  
+
   <main class="pt-20">
     <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-primary-50 to-secondary-50 py-20">
-      <div class="container-custom">
+    <section class="bg-gradient-to-br from-primary-50 to-secondary-50 h-120 py-20 relative overflow-hidden">
+      <!-- Background Image -->
+      <div class="absolute inset-0 z-0">
+        <img
+          src="/banner.jpg"
+          alt="Background"
+          class="w-full h-full object-cover opacity-30"
+        />
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-50/80 to-secondary-50/80"></div>
+      </div>
+
+      <div class="container-custom relative z-10">
         <div class="max-w-4xl mx-auto text-center">
           <h1 class="text-5xl md:text-6xl font-bold text-secondary-900 mb-6">
-            Clayton
-            <span class="bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">
-              Girard
-            </span>
+            Clayton Girard
           </h1>
           <p class="text-xl text-secondary-600 mb-8 leading-relaxed">
-            Ingénieur logiciels chez Institut FEMTO-ST, passionné par la création d'applications modernes et performantes. 
+            Ingénieur logiciels chez Institut FEMTO-ST, passionné par la création d'applications modernes et performantes.
             Spécialisé dans React, TypeScript, et les architectures monorepo avec des outils comme Tauri.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -109,28 +133,28 @@ const skills = [
           <div class="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <p class="text-lg text-secondary-600 leading-relaxed mb-6">
-                Ingénieur logiciels chez Institut FEMTO-ST avec une expertise en React, TypeScript et architectures modernes. 
-                Je me spécialise dans le développement d'applications cross-platform avec Tauri, 
+                Ingénieur logiciels chez Institut FEMTO-ST avec une expertise en React, TypeScript et architectures modernes.
+                Je me spécialise dans le développement d'applications cross-platform avec Tauri,
                 les APIs performantes avec Fastify, et les interfaces utilisateur avec React + UnoCSS.
               </p>
               <p class="text-lg text-secondary-600 leading-relaxed">
-                Mon approche combine les meilleures pratiques du développement moderne avec 
-                des outils de pointe comme Turborepo pour les monorepos, Drizzle ORM pour les bases de données, 
+                Mon approche combine les meilleures pratiques du développement moderne avec
+                des outils de pointe comme Turborepo pour les monorepos, Drizzle ORM pour les bases de données,
                 et des tests complets avec Vitest et Playwright.
               </p>
             </div>
             <div class="grid grid-cols-2 gap-6">
               <div class="text-center">
-                <div class="text-3xl font-bold text-primary-600">4+</div>
+                <div class="text-3xl font-bold text-primary-600">7+</div>
                 <div class="text-secondary-600">Projets GitHub</div>
               </div>
               <div class="text-center">
-                <div class="text-3xl font-bold text-primary-600">3+</div>
+                <div class="text-3xl font-bold text-primary-600">8+</div>
                 <div class="text-secondary-600">Langages maîtrisés</div>
               </div>
               <div class="text-center">
-                <div class="text-3xl font-bold text-primary-600">100%</div>
-                <div class="text-secondary-600">Open Source</div>
+                <div class="text-3xl font-bold text-primary-600">Mix</div>
+                <div class="text-secondary-600">Open & Privé</div>
               </div>
               <div class="text-center">
                 <div class="text-3xl font-bold text-primary-600">∞</div>
@@ -176,10 +200,10 @@ const skills = [
         <div class="max-w-4xl mx-auto text-center">
           <h2 class="text-3xl font-bold mb-6">Restons en contact</h2>
           <p class="text-lg text-secondary-600 mb-12">
-            Intéressé par une collaboration ? N'hésitez pas à me contacter 
+            Intéressé par une collaboration ? N'hésitez pas à me contacter
             pour discuter de votre projet.
           </p>
-          
+
           <div class="grid md:grid-cols-3 gap-8 mb-12">
             <div class="flex flex-col items-center">
               <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mb-4">
@@ -190,7 +214,7 @@ const skills = [
                 contact@djahmo.fr
               </a>
             </div>
-            
+
             <div class="flex flex-col items-center">
               <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mb-4">
                 <div class="i-carbon-logo-linkedin w-6 h-6 text-primary-600"></div>
@@ -200,7 +224,7 @@ const skills = [
                 /in/clayton-girard
               </a>
             </div>
-            
+
             <div class="flex flex-col items-center">
               <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mb-4">
                 <div class="i-carbon-logo-github w-6 h-6 text-primary-600"></div>
@@ -211,7 +235,7 @@ const skills = [
               </a>
             </div>
           </div>
-          
+
           <a href="mailto:contact@djahmo.fr" class="btn-primary inline-flex items-center">
             <span>Envoyer un message</span>
             <div class="i-carbon-send ml-2 w-4 h-4"></div>
@@ -225,7 +249,7 @@ const skills = [
   <footer class="bg-secondary-900 text-secondary-300 py-8">
     <div class="container-custom">
       <div class="text-center">
-        <p>&copy; 2025 Clayton Girard. Développé avec Astro et UnoCSS.</p>
+        <p>&copy; 2025 Clayton Girard</p>
       </div>
     </div>
   </footer>
