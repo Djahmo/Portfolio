@@ -91,8 +91,8 @@ Portfolio/
 
 ## � Contact
 
-**Clayton Girard** - Ingénieur logiciels  
-📧 [contact@djahmo.fr](mailto:contact@djahmo.fr)  
-🔗 [LinkedIn](https://www.linkedin.com/in/clayton-girard-89b4b1158)  
-🐙 [GitHub](https://github.com/Djahmo)  
+**Clayton Girard** - Ingénieur logiciels
+📧 [contact@djahmo.fr](mailto:contact@djahmo.fr)
+🔗 [LinkedIn](https://www.linkedin.com/in/clayton-girard-89b4b1158)
+🐙 [GitHub](https://github.com/Djahmo)
 🌐 [Portfolio](https://djahmo.fr)
