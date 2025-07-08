@@ -17,8 +17,8 @@ const projects = [
   },
   {
     title: "Chessmont Open Database",
-    description: "Dataset massif d'échecs open source avec 21.5+ millions de parties uniques et 1.8+ milliards de positions indexées. Fusion de données Lichess, Chess.com, TWIC et PGN Mentor disponible sur Kaggle.",
-    technologies: ["Javascript", "Data Processing", "Zstandard", "PGN", "Open Data", "Kaggle"],
+    description: "Dataset massif d'échecs open source avec 21.5+ millions de parties uniques et 1.8+ milliards de positions indexées. Fusion de données Lichess, Chess.com, TWIC et PGN Mentor disponible sur Kaggle. Création d'une API personnelle pour Chessmont, utilisant ClickHouse pour des requêtes ultra-rapides sur les données d'échecs.",
+    technologies: ["Javascript", "Data Processing", "Zstandard", "PGN", "Open Data", "Kaggle", "ClickHouse", "API Development"],
     githubUrl: "https://github.com/Chessmont/ChessDatasetGenerator",
     liveUrl: "https://database.chessmont.com",
     featured: true
@@ -70,21 +70,22 @@ const projects = [
 ];
 
 const skills = [
-  { name: "TypeScript", level: 5, icon: "i-carbon-document-config", category: "Language" },
-  { name: "JavaScript", level: 5, icon: "i-carbon-logo-javascript", category: "Language" },
+  { name: "TypeScript", level: 5, icon: "i-carbon-code", category: "Language" },
+  { name: "JavaScript", level: 5, icon: "i-carbon-code", category: "Language" },
   { name: "Java", level: 4, icon: "i-carbon-application", category: "Language" },
   { name: "Python", level: 4, icon: "i-carbon-logo-python", category: "Language" },
   { name: "C++", level: 3, icon: "i-carbon-code", category: "Language" },
   { name: "C#", level: 3, icon: "i-carbon-application", category: "Language" },
-  { name: "PHP", level: 3, icon: "i-carbon-logo-php", category: "Language" },
+  { name: "PHP", level: 3, icon: "i-carbon-code", category: "Language" },
   { name: "HTML/CSS", level: 5, icon: "i-carbon-html", category: "Web" },
   { name: "Bash/Batch", level: 4, icon: "i-carbon-terminal", category: "Scripting" },
   { name: "React", level: 5, icon: "i-carbon-logo-react", category: "Frontend" },
   { name: "Astro", level: 4, icon: "i-carbon-rocket", category: "Frontend" },
-  { name: "Node.js", level: 5, icon: "i-carbon-logo-nodejs", category: "Backend" },
+  { name: "Node.js", level: 5, icon: "i-carbon-code", category: "Backend" },
   { name: "Express", level: 5, icon: "i-carbon-api-1", category: "Backend" },
   { name: "Fastify", level: 4, icon: "i-carbon-rocket", category: "Backend" },
   { name: "MySQL/MariaDB", level: 5, icon: "i-carbon-data-base", category: "Database" },
+  { name: "ClickHouse", level: 5, icon: "i-carbon-data-base", category: "Database" },
   { name: "Sequelize", level: 4, icon: "i-carbon-data-base-alt", category: "ORM" },
   { name: "Drizzle ORM", level: 4, icon: "i-carbon-data-base-alt", category: "ORM" },
   { name: "WebSocket", level: 4, icon: "i-carbon-connect", category: "Real-time" },
